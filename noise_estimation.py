@@ -44,7 +44,7 @@ def noise_estimate(image, patch_s=8):
     for i in range(-1, -d - 1, -1):
         tau = np.mean(eigenvalues[:i])
         if np.sum(eigenvalues[:i] > tau) == np.sum(eigenvalues[:i] < tau):
-            return np.sqrt(tau)
+            return np.sqrt(np.abs(tau))
 
 
 if __name__ == '__main__':
